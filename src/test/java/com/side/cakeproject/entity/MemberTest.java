@@ -12,7 +12,7 @@ class MemberTest {
     @Test
     @DisplayName("Member Builder 작동 테스트")
     void createMember(){
-        MemberDTO memberDTO = new MemberDTO();
+        MemberDTO.Requset memberDTO = new MemberDTO.Requset();
         memberDTO.setId("ung6860");
         memberDTO.setEmail("test");
 

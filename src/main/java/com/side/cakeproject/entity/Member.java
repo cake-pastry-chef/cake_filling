@@ -11,20 +11,11 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@SequenceGenerator(
-        name = "MEMBER_SEQ_GENERATOR"
-        , sequenceName = "MEMBER_SEQ"
-        , initialValue = 1
-        , allocationSize = 1
-)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 public class Member {
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE
-            , generator = "MEMBER_SEQ_GENERATOR"
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "no")
     private long no;
 

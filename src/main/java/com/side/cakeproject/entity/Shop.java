@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Comment;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.domain.Persistable;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -20,7 +22,7 @@ import java.sql.Timestamp;
 )
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Shop {
+public class Shop implements Persistable<Long> {
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE
@@ -34,35 +36,39 @@ public class Shop {
     private Member member;
 
     @Column(name = "name", nullable = false, length = 20)
-    @Comment("매장명")
     private String name;
 
     @Column(name = "call", length = 15)
-    @Comment("매장 전화번호")
     private String call;
 
     @Embedded
     private Address address;
 
     @Column(name = "open_time")
-    @Comment("매장 오픈 시간")
     private int openTime;
 
     @Column(name = "close_time")
-    @Comment("매장 클로즈 시간")
     private int closeTime;
 
     @Column(name = "regist_date")
-    @CreationTimestamp
-    @Comment("매장 등록일")
+    @CreatedDate
     private Timestamp registDate;
 
-    @Builder(builderClassName = "ShopBuilder", builderMethodName = "ShopBuilder")
+    @Builder
     public Shop(String name, String call, Address address, int openTime, int closeTime) {
         this.name = name;
         this.call = call;
         this.address = address;
         this.openTime = openTime;
         this.closeTime = closeTime;
+    }
+
+    @Override
+    public boolean isNew() {
+        return registDate == null;
+    }
+
+    public Long getId() {
+        return this.id;
     }
 }
