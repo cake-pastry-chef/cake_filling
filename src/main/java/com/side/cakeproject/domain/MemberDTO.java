@@ -12,6 +12,7 @@ import java.sql.Timestamp;
 
 public class MemberDTO {
 
+
     @Getter
     @Setter
     @NoArgsConstructor
