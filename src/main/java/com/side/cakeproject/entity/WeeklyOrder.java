@@ -11,8 +11,8 @@ import java.sql.Timestamp;
 
 @Entity
 @SequenceGenerator(
-        name = "weekly_order_seq",
-        sequenceName = "weekly_order_seq",
+        name = "WEEKLY_ORDER_SEQ_GENERATOR",
+        sequenceName = "WEEKLY_ORDER_SEQ",
         initialValue = 1,
         allocationSize = 1
 )

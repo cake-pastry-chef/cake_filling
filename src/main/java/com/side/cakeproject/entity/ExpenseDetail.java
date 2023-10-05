@@ -1,12 +1,15 @@
 package com.side.cakeproject.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
+@SequenceGenerator(
+        name = "EXPENSE_DETAIL_SEQ_GENERATOR",
+        sequenceName = "EXPENSE_DETAIL_SEQ",
+        initialValue = 1,
+        allocationSize = 1
+)
 @Table(name = "expense_detail")
 public class ExpenseDetail {
     @Id

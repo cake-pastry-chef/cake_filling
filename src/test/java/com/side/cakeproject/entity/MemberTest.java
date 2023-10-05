@@ -12,13 +12,13 @@ class MemberTest {
     @Test
     @DisplayName("Member Builder 작동 테스트")
     public void createMember(){
-        MemberDTO memberDTO = new MemberDTO();
-//        memberDTO.setId("ung6860");
-//        memberDTO.setEmail("test");
-//
-//        final Member member = memberDTO.toEntity();
-//
-//        Assertions.assertThat(member.getEmail()).isEqualTo("test");
-//        Assertions.assertThat(member.getId()).isEqualTo(null);
+        /*MemberDTO memberDTO = new MemberDTO();
+        memberDTO.setId("ung6860");
+        memberDTO.setEmail("test");
+
+        final Member member = memberDTO.toEntity();
+
+        Assertions.assertThat(member.getEmail()).isEqualTo("test");
+        Assertions.assertThat(member.getId()).isEqualTo(null);*/
     }
 }

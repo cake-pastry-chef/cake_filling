@@ -1,11 +1,14 @@
 package com.side.cakeproject.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
+@SequenceGenerator(
+        sequenceName = "SHOP_IMAGE_SEQ_GENERATOR"
+        , name = "SHOP_IMAGE_SEQ"
+        , initialValue = 1
+        , allocationSize = 1
+)
 @Table(name = "shop_image")
 public class ShopImage {
     @Id

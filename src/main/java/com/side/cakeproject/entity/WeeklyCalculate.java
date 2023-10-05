@@ -1,12 +1,15 @@
 package com.side.cakeproject.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
+@SequenceGenerator(
+        sequenceName = "WEEKLY_CALCULATE_SEQ_GENERATOR"
+        , name = "WEEKLY_CALCULATE_SEQ"
+        , initialValue = 1
+        , allocationSize = 1
+)
 @Table(name = "weekly_calculate")
 public class WeeklyCalculate {
     @Id
